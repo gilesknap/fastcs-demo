@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastcs-demo"
+version = "0.1.0"
+description = "Working demo IOC that exercises the FastCS tutorial driver with two temperature controllers"
+authors = [{ name = "Giles Knap", email = "gilesknap@gmail.com" }]
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+dependencies = [
+    # Pinned to the published beta. PEP 440 normalises 0.14.0-beta.1 → 0.14.0b1.
+    "fastcs[epicsca,demo]==0.14.0b1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-timeout",
+    "aioca",
+]
+
+[project.scripts]
+fastcs-demo-tutorial = "fastcs_demo.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fastcs_demo = ["simulation/*.yaml"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+timeout = 60

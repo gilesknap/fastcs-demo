@@ -1,0 +1,24 @@
+# Two `TemperatureController` instances driven by `launch()` per
+# `docs/how-to/launch-framework.md#hosting-multiple-controllers`.
+#
+# Each id (MAIN / AUX) becomes that controller's EPICS PV prefix. The two
+# controllers talk to two simulators on different ports — see
+# `src/fastcs_demo/simulation/temp_controller.yaml` for the simulator config.
+controllers:
+  MAIN:
+    type: TemperatureController
+    num_ramp_controllers: 4
+    ip_settings:
+      ip: localhost
+      port: 25565
+  AUX:
+    type: TemperatureController
+    num_ramp_controllers: 2
+    ip_settings:
+      ip: localhost
+      port: 25566
+transport:
+  - epicsca: {}
+    gui:
+      title: FastCS Demo Temperature Controller
+      output_dir: opi

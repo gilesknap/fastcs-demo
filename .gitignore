@@ -1,0 +1,15 @@
+# Auto-generated EPICS Phoebus screens (per `transport.gui.output_dir` in
+# fastcs.yaml). Regenerated every time the IOC starts.
+opi/
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+*.pyc
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
