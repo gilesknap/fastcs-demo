@@ -23,9 +23,7 @@ provides `tickit` and the `TempController` simulator device class.
 ## Install
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e '.[test]'
+uv sync
 ```
 
 ## Run
@@ -33,8 +31,10 @@ pip install -e '.[test]'
 In one terminal, start the simulators:
 
 ```bash
-tickit all src/fastcs_demo/simulation/temp_controller.yaml
+./launch-sim.sh
 ```
+
+(thin wrapper around `tickit all src/fastcs_demo/simulation/temp_controller.yaml`).
 
 In another terminal, start the IOC:
 
