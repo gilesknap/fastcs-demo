@@ -5,13 +5,13 @@
 # controllers talk to two simulators on different ports — see
 # `src/fastcs_demo/simulation/temp_controller.yaml` for the simulator config.
 controllers:
-  MAIN:
+  - id: MAIN
     type: TemperatureController
     num_ramp_controllers: 4
     ip_settings:
       ip: localhost
       port: 25565
-  AUX:
+  - id: AUX
     type: TemperatureController
     num_ramp_controllers: 2
     ip_settings:

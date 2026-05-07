@@ -11,8 +11,8 @@ readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
 dependencies = [
-    # Pinned to the published beta. PEP 440 normalises 0.14.0-beta.1 → 0.14.0b1.
-    "fastcs[epicsca,demo]==0.14.0b1",
+    # Pinned to the published beta. PEP 440 normalises 0.14.0-beta.2 → 0.14.0b2.
+    "fastcs[epicsca,demo]==0.14.0b2",
 ]
 
 [project.optional-dependencies]
